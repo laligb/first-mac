@@ -29,9 +29,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'sqlite3', '1.4.2'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
@@ -42,8 +42,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring', '2.1.1'
-  gem 'spring-watcher-listen', '2.0.1'
+  gem 'spring'
 end
 
 group :test do
