@@ -3,11 +3,11 @@
 //  /* mixins, variables, etc. */
 //  $gray-medium-light: #eaeaea;
 
-//  @mixin box_sizing {
-//    -moz-box-sizing:    border-box;
-//    -webkit-box-sizing: border-box;
-//    box-sizing: border-box;
-//  }
+ @mixin box_sizing {
+   -moz-box-sizing:    border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+ }
 
 
 // /* sidebar */
@@ -69,10 +69,10 @@
 //   }
 
 
-// /* miscellaneous */
-// .debug_dump {
-//   clear: both;
-//   float: left;
-//   margin-top: 45px;
-//   @include box_sizing;
-// }
+/* miscellaneous */
+.debug_dump {
+  clear: both;
+  float: left;
+  margin-top: 45px;
+  @include box_sizing;
+}
