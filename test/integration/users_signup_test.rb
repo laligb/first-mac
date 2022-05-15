@@ -4,6 +4,12 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
+
+  test "should get new" do
+    get users_new_url
+    assert_response :success
+  end
+
   test "invalid signup information" do
     get signup_path
     assert_no_difference 'User.count' do
