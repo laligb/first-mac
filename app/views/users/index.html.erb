@@ -6,7 +6,7 @@
 <ul class="users">
   <% User.all.each do |user| %>
     <li>
-      <%= render user %>
+      <%= render @users %>
     </li>
   <% end %>
 </ul>
