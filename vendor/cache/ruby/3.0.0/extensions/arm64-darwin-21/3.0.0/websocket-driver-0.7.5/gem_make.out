@@ -1,0 +1,15 @@
+current directory: /Users/jobandtalent/code/laligb/first-mac/vendor/cache/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/jobandtalent/.rvm/rubies/ruby-3.0.3/bin/ruby -I /Users/jobandtalent/.rvm/rubies/ruby-3.0.3/lib/ruby/3.0.0 -r ./siteconf20220516-90177-8dv5d3.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jobandtalent/code/laligb/first-mac/vendor/cache/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= clean
+
+current directory: /Users/jobandtalent/code/laligb/first-mac/vendor/cache/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\=
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/jobandtalent/code/laligb/first-mac/vendor/cache/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20220516-90177-cm572c

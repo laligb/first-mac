@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       reset_session
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       log_in user
-      redirect_to user
+      forwarding_url = session[:forwarding_url]
     else
       # Create an error message.
       flash.now[:danger] = 'Invalid email/password combination' # Not quite right
