@@ -72,3 +72,5 @@ gem 'rails-controller-testing'
 gem 'faker', '2.11.0'
 gem 'will_paginate', '3.3.0'
 gem 'bootstrap-will_paginate', '1.0.0'
+
+gem 'letter_opener', group: :development
