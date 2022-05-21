@@ -33,7 +33,7 @@ module SessionsHelper
  # Returns true if the given user is the current user.
  def current_user?(user)
   user && user == current_user
-  redirect_to(root_url) unless current_user?(@user)
+  # redirect_to(root_url) unless current_user?(@user) # I commented this because error: stack level too deep
  end
 
   def logged_in?
