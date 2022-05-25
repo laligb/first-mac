@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token, :activation_token, :reset_token
+  before_save :downcase_email
+  before_create :create_activation_digest
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
@@ -9,15 +12,11 @@ class User < ApplicationRecord
                                    dependent:   :destroy
   has_many :followers, through: :passive_relationships, source: :follower
 
-  attr_accessor :remember_token, :activation_token, :reset_token
-  before_save :downcase_email
-  before_create :create_activation_digest
-
   validates :name, presence: true, length: {maximum: 50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :email, presence: true, length: {maximum: 255},
-                        format: { with: VALID_EMAIL_REGEX },
-                        uniqueness: true
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
@@ -47,11 +46,6 @@ class User < ApplicationRecord
     remember_digest || remember
   end
 
-  # Returns true if the given token matches the digest.
-  # def authenticated?(remember_token)
-  #   return false if remember_digest.nil?
-  #   BCrypt::Password.new(remember_digest).is_password?(remember_token)
-  # end
   # Returns true if the given token matches the digest.
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
